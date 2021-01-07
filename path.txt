@@ -1,4 +1,4 @@
-~/Desktop/folders/study/Projects/Projest2 - Product Inventory
+~/Desktop/folders/study/Projects/Project2 - Product Inventory
 
 
 # Product Inventory Project - Create an application which manages an inventory of products.
