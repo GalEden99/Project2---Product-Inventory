@@ -1,3 +1,4 @@
 # Auto Generated dirs and Files
 .idea/*
 venv/*
+__pycache__/*
