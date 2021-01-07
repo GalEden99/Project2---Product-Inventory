@@ -1,27 +1,37 @@
 from Inventory import Inventory
 from Product import Product
+from customer import Customer
 from store import Store
 
-inventory = Inventory()
 
-orange = Product("Orange", 5, 1, True)
-apple = Product("Apple", 4, 2, True)
-shrimp = Product("Shrimp", 50, 3, False)
-bread = Product("Bread", 10, 4, True)
-eggs = Product("Eggs", 12, 5, True)
 
-print(inventory.products)
-inventory.add_product(orange)
-inventory.add_product(apple)
-inventory.add_product(apple)
+def get_products():
+    return [Product("Orange", 5, 1, True),
+            Product("Apple", 4, 2, True),
+            Product("Shrimp", 50, 3, False),
+            Product("Bread", 10, 4, True),
+            Product("Eggs", 12, 5, True)]
 
-store = Store(inventory)
 
-if store.contain_product(orange):
-    store.remove_product(orange)
+def build_inventory(inventory: Inventory, products):
+    for product in products:
+        inventory.add_product(product)
 
-print(inventory.products)
 
-#
-# print(orange.id)
-# print(orange.getName())
+def buy_and_sell_product(product):
+    store.sell_product(products[0])
+    customer.buy_product(products[0])
+
+
+
+
+if __name__ == '__main__':
+    products = get_products()  # [Product("Orange", 5, 1, True), Product("Apple", 4, 2, True),...]
+    inventory = Inventory()
+    build_inventory(inventory, products)
+    # print(inventory.get_quantity())
+    store = Store(inventory)
+    customer = Customer(1, "Gil", 100)
+    print(customer.money)
+    buy_and_sell_product(products[0])
+    print(customer.money)
